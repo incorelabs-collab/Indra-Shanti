@@ -1,3 +1,3 @@
 <?php
-	echo "<h1 align='center'>Welcome to Indra Shanti Lodge.</h1>";
+	echo "<h1 align='center'>Welcome to Indra Shanti Lodge. Hi!!</h1>";
 ?>
