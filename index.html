@@ -21,6 +21,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--end slider -->
 <!---strat-date-piker---->
 <link rel="stylesheet" href="css/jquery-ui.css" />
+<link rel="icon" href="images/favicon.png" type="image/png" >
 <script src="js/jquery-ui.js"></script>
 		  <script>
 				  $(function() {
@@ -28,7 +29,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				  });
 		  </script>
 <!---/End-date-piker---->
-<link type="text/css" rel="stylesheet" href="css/JFGrid.css" />
+<!--<link type="text/css" rel="stylesheet" href="css/JFGrid.css" />-->
 <link type="text/css" rel="stylesheet" href="css/JFFormStyle-1.css" />
 		<script type="text/javascript" src="js/JFCore.js"></script>
 		<script type="text/javascript" src="js/JFForms.js"></script>
@@ -59,6 +60,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         		}
     		});
 		});
+</script>
+<script type="text/javascript">
+var roomType = ["Non-Attach", "Non A/C", "Non A/C Deluxe", "A/C Standard", "A/C Deluxe","4 Bedroom NON A/C","4 Bedroom A/C", "Super Deluxe"];
+
+window.onload = configurePage;
+function configurePage(){
+	var roomSelect = document.getElementById("room_type");
+	for (var i = 0; i < roomType.length; i++) {
+		var opt = document.createElement("option");
+		opt.value = roomType[i];
+		opt.innerHTML = roomType[i];
+		roomSelect.appendChild(opt);
+	};
+}
 </script>
 </head>
 <body>
@@ -110,7 +125,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		                    <div class="slide_content_wrap">
 		                        <!-- Text title -->
 		                        <h4 class="title"><i class="bg"></i>Best Deals <span class="hide"> </span></h4>
-		                        <h5 class="title1"><i class="bg"></i>Morbi justo <span class="hide" >condimentum accumsan</span></h5>
+		                        <h5 class="title1"><i class="bg"></i>Quality Stay, <span class="hide" >Reasonable Prices</span></h5>
 		                        <!-- /Text title -->
 		                    </div>
 		                </div>
@@ -122,8 +137,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		                <div class="slide_content">
 		                     <div class="slide_content_wrap">
 		                        <!-- Text title -->
-		                        <h4 class="title"><i class="bg"></i>Morbi justo <span class="hide"> condimentum </span>text</h4>
-		                        <h5 class="title1"><i class="bg"></i>Lorem Ipsum is <span class="hide">simply dummy text</span> </h5>
+		                        <h4 class="title"><i class="bg"></i>A Home Away, <span class="hide"> from Home. </span></h4>
+		                        <h5 class="title1"><i class="bg"></i>With the comfort we offer, <span class="hide">Feel like home.</span> </h5>
 		                        <!-- /Text title -->
 		                    </div>
 		                </div>
@@ -142,8 +157,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="online_reservation">
 	<div class="b_room">
 		<div class="booking_room">
-			<h4>book a room online</h4>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+			<h4>Enquire</h4>
+			<p>Select the dates and we shall get back to you.</p>
 		</div>
 		<div class="reservation">
 			<ul>
@@ -151,51 +166,48 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<h5>type of room:</h5>
 					<!--start section_room-->
 					<div class="section_room">
-						<select id="country" onchange="change_country(this.value)" class="frm-field required">
-							<option value="null">Select a type of room</option>
-				            <option value="null">Non Attach</option>         
-				            <option value="AX">Non A/C</option>
-							<option value="AX">Non A/C Deluxe</option>														
-							<option value="AX">A/C Standard</option>
-							<option value="AX">A/C Deluxe</option>
-							<option value="AX">4 Bedroom Non-Attach</option>
-							<option value="AX">4 Bedroom A/C Deluxe</option>
-							<option value="AX">3 Bedroom A/C</option>
+						<select id="room_type" class="frm-field required">
 
 		        		</select>
 					</div>	
 				</li>
 				<li  class="span1_of_1 left">
-					<h5>check-in-date:</h5>
+					<h5>check-in:</h5>
 					<div class="book_date">
 						<form>
-							<input class="date" id="datepicker" type="text" value="DD/MM/YYYY" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'DD/MM/YYYY';}">
+							<input class="date" id="datepicker" type="text" value="DD/MM/YY" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'DD/MM/YY';}">
 						</form>
 
 					</div>					
 				</li>
 				<li  class="span1_of_1 left">
-					<h5>check-out-date:</h5>
+					<h5>check-out:</h5>
 					<div class="book_date">
 						<form>
-							<input class="date" id="datepicker1" type="text" value="DD/MM/YYYY" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'DD/MM/YYYY';}">
+							<input class="date" id="datepicker1" type="text" value="DD/MM/YY" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'DD/MM/YY';}">
 						</form>
 					</div>		
 				</li>
-				<li class="span1_of_2 left">
-					<h5>Occupany:</h5>
-					<!----------start section_room----------->
-					<div class="section_room">
-						<select id="country" onchange="change_country(this.value)" class="frm-field required">
-							<option value="null">Single</option>
-				            <option value="null">Double</option>
-		        		</select>
+				<li class="span1_of_1 left">
+					<h5>email:</h5>
+					<div class="form_text">
+						<form>
+							<input type="text" id="email_contact" placeholder="john@example.com">
+						</form>
+					</div>					
+				</li>
+				<li class="span1_of_1 left">
+					<h5>mobile:</h5>
+					<div class="form_text">
+						<form>
+							<input type="text" id="mobile_contact" placeholder="9876543210">
+						</form>
 					</div>					
 				</li>
 				<li class="span1_of_3">
 					<div class="date_btn">
 						<form>
-							<input type="submit" value="book now" />
+							<input type="button" id="enquire_btn" value="Enquire" />
 						</form>
 					</div>
 				</li>
@@ -210,11 +222,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="grid1_of_3">
 			<div class="grid1_of_3_img">
 				<a href="details.html">
-					<img src="images/pic4.jpg" alt="" />
+					<img src="images/pic2.jpg" alt="" />
 					<span class="next"> </span>
 				</a>
 			</div>
-			<h4><a href="#">A/C single room<span>&#8377; 950</span></a></h4>
+			<h4><a href="#">single room<span>&#8377 120</span></a></h4>
 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 		</div>
 		<div class="grid1_of_3">
@@ -224,7 +236,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<span class="next"> </span>
 				</a>
 			</div>
-			<h4><a href="#">A/C double room<span>&#8377; 1100</span></a></h4>
+			<h4><a href="#">double room<span>&#8377 180</span></a></h4>
 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 		</div>
 		<div class="grid1_of_3">
@@ -234,7 +246,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<span class="next"> </span>
 				</a>
 			</div>
-			<h4><a href="#">suite room<span>&#8377; 2100</span></a></h4>
+			<h4><a href="#">suite room<span>&#8377 210</span></a></h4>
 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 		</div>
 		<div class="clear"></div>
@@ -249,7 +261,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="wrap">
 <div class="footer">
 			<div class="copy">
-				<p class="link"><span>© All rights reserved | Incore labs &nbsp<a href="http://www.incorelabs.com/"> Incore Labs</a></span></p>
+				<p class="link"><span>Powered By&nbsp<a href="http://www.incorelabs.com/"> Incore Labs</a></span></p>
 			</div>
 			<div class="f_nav">
 				<ul>
@@ -272,6 +284,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="clear"></div>
 </div>
 </div>
-</div>		
+</div>
+<script type="text/javascript">
+
+document.getElementById('enquire_btn').onclick = function(){
+	var roomType = document.getElementById("room_type").value, date1 = document.getElementById("datepicker").value, date2 = document.getElementById("datepicker1").value, email = document.getElementById("email_contact").value, mobile = document.getElementById("mobile_contact").value;
+	var validate = true;
+
+	if (room_type == "" || date1 == "" || date2 == "" || email == "" || mobile == "") {
+		validate = false;
+	};
+	console.log(validate);
+}
+
+</script>
 </body>
 </html>
