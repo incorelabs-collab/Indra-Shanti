@@ -1,0 +1,35 @@
+application: indrashanti
+version: 1
+runtime: php
+api_version: 1
+
+handlers:
+- url: /css
+  static_dir: css
+
+- url: /js
+  static_dir: js
+
+- url: /images
+  static_dir: images
+
+- url: /bootstrap
+  static_dir: bootstrap
+
+- url: /index.html
+  script: index.html
+
+- url: /contact.html
+  script: contact.html
+
+- url: /details.html
+  script: details.html
+
+- url: /rooms.html
+  script: rooms.html
+
+- url: /mail.php
+  script: mail.php
+
+- url: /
+  script: index.html
